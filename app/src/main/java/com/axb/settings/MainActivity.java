@@ -10,6 +10,8 @@ import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.axb.settings.adapter.SettingAdapter;
 import com.axb.settings.bean.SetItem;
@@ -17,7 +19,7 @@ import com.axb.settings.bean.SetItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //RecyclerView
     private RecyclerView mSetRecyclerView;
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     private static final int COLUMN = 1;
     private List<SetItem> mSetItem;
+
+    //双击退出
+    private ImageView back;
+    private long firstClickBack = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+
+        //back
+        back = (ImageView) findViewById(R.id.back_set);
+        back.setOnClickListener(this);
 
         //RecyclerView
         mSetItem = getItemList();
@@ -83,6 +93,26 @@ public class MainActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+    ////双击退出
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.back_set:
+                exitClick();
+                break;
+        }
+    }
+
+    private void exitClick() {
+        long secondClickBack = System.currentTimeMillis();
+        if (secondClickBack - firstClickBack > 2000) {
+            Toast.makeText(this, "再按一次退出", Toast.LENGTH_LONG).show();
+            firstClickBack = secondClickBack;
+        } else {
+            finish();
         }
     }
 }

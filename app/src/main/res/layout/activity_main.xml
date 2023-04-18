@@ -12,6 +12,17 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"><!--title栏背景色：灰白色-->
 
+        <!--把这个放在Toolbar 内部， 否则有点击区域点击不生效问题-->
+        <ImageView
+            android:id="@+id/back_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/title_bar_margin_top"
+            android:layout_marginTop="@dimen/title_bar_margin_top"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_back_selector" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
