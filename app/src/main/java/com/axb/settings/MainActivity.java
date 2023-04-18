@@ -1,5 +1,6 @@
 package com.axb.settings;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import com.axb.settings.adapter.SettingAdapter;
 import com.axb.settings.bean.SetItem;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +35,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView back;
     private long firstClickBack = 0;
 
+    //选项卡定义
+    private static final int SETTING_TAB_NETWORK = 0;
+    private static final int SETTING_TAB_BLUETOOTH = 1;
+    private static final int SETTING_TAB_DISPLAY = 2;
+    private static final int SETTING_TAB_SOUND = 3;
+    private static final int SETTING_TAB_DATE = 4;
+    private static final int SETTING_TAB_STORAGE = 5;
+    private static final int SETTING_TAB_APP_NOTIFICATION = 6;
+    private static final int SETTING_TAB_PASSWORD = 7;
+    private static final int SETTING_TAB_PARENTAL_CONTROL = 8;
+    private static final int SETTING_TAB_ABOUT_TABLETS = 9;
+    private static final int SETTING_TAB_RESTORE_FACTORY = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initView();
+        initListener();
     }
 
     private void initView() {
@@ -75,6 +92,56 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             itemList.add(item);
         }
         return itemList;
+    }
+
+    /*监听点击事件 recyclerview*/
+
+    private void initListener() {
+        mSettingAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
+                settingOption(position);
+                Toast.makeText(mContext, "你点击了第 "+position+" 个选项", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void settingOption(int position) {
+        switch (position){
+            case SETTING_TAB_NETWORK:
+                Toast.makeText(mContext, "我是网络", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_BLUETOOTH:
+                Toast.makeText(mContext, "我是蓝牙", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_DISPLAY:
+                Toast.makeText(mContext, "我是显示", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_SOUND:
+                Toast.makeText(mContext, "我是声音", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_DATE:
+                Toast.makeText(mContext, "我是日期", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_STORAGE:
+                Toast.makeText(mContext, "我是存储", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_APP_NOTIFICATION:
+                Toast.makeText(mContext, "我是应用和通知", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_PASSWORD:
+                Toast.makeText(mContext, "我是密码管理", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_PARENTAL_CONTROL:
+                Toast.makeText(mContext, "我是家长管控", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_ABOUT_TABLETS:
+                Toast.makeText(mContext, "我是关于平板", Toast.LENGTH_SHORT).show();
+                break;
+            case SETTING_TAB_RESTORE_FACTORY:
+                Toast.makeText(mContext, "我是恢复出厂设置", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 
     /**
