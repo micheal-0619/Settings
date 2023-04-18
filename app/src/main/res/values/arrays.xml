@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="itemList">
+        <item>@string/network</item>
+        <item>@string/bluetooth</item>
+        <item>@string/display</item>
+        <item>@string/sound</item>
+        <item>@string/date</item>
+        <item>@string/storage</item>
+        <item>@string/applications_notifications</item>
+        <item>@string/password</item>
+        <item>@string/parental_control</item>
+        <item>@string/about_tablets</item>
+        <item>@string/restore_factory</item>
+    </string-array>
+</resources>

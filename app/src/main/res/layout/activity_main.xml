@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/setting_bg"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
         tools:ignore="MissingConstraints"><!--title栏背景色：灰白色-->
 
         <TextView
@@ -18,8 +17,19 @@
             android:layout_height="wrap_content"
             android:text="@string/title_bar"
             android:textSize="35sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/title_bar_margin_top"
             android:layout_gravity="center"/>
     </androidx.appcompat.widget.Toolbar>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="@dimen/option_box_button_margin_left"
+        android:layout_marginRight="@dimen/option_box_button_margin_right"
+        tools:ignore="MissingConstraints"
+        />
+
+</RelativeLayout>

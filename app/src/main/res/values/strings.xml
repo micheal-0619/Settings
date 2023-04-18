@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">系统设置</string>
     <string name="title_bar" translatable="false">系统设置</string>
+    <string name="wifi" translatable="false">Wi-Fi</string>
+    <string name="bluetooth" translatable="false">蓝牙</string>
+    <string name="network" translatable="false">网络</string>
+    <string name="display" translatable="false">显示</string>
+    <string name="sound" translatable="false">声音</string>
+    <string name="date" translatable="false">时间日期</string>
+    <string name="storage" translatable="false">存储</string>
+    <string name="applications_notifications" translatable="false">应用和通知</string>
+    <string name="password" translatable="false">密码管理</string>
+    <string name="parental_control" translatable="false">家长管控</string>
+    <string name="about_tablets" translatable="false">关于平板电脑</string>
+    <string name="restore_factory" translatable="false">恢复出厂设置</string>
 </resources>
