@@ -6,7 +6,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
@@ -47,6 +51,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int SETTING_TAB_PARENTAL_CONTROL = 8;
     private static final int SETTING_TAB_ABOUT_TABLETS = 9;
     private static final int SETTING_TAB_RESTORE_FACTORY = 10;
+
+
+    //settings
+    public static final String PKG_SETTINGS = "com.android.settings";
+    //wifi
+    public static final String CLS_WIFI = "com.android.settings.wifi.WifiPickerActivity";
+    //bluetooth
+    public static final String CLS_BLUETOOTH = "com.android.settings.Settings$ConnectedDeviceDashboardActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,18 +113,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
                 settingOption(position);
-                Toast.makeText(mContext, "你点击了第 "+position+" 个选项", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "你点击了第 " + position + " 个选项", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void settingOption(int position) {
-        switch (position){
+        switch (position) {
             case SETTING_TAB_NETWORK:
-                Toast.makeText(mContext, "我是网络", Toast.LENGTH_SHORT).show();
+                startApp(mContext, PKG_SETTINGS, CLS_WIFI, null);
+                //Toast.makeText(mContext, "我是网络", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_BLUETOOTH:
-                Toast.makeText(mContext, "我是蓝牙", Toast.LENGTH_SHORT).show();
+                startApp(mContext, PKG_SETTINGS, CLS_BLUETOOTH, null);
+                //Toast.makeText(mContext, "我是蓝牙", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_DISPLAY:
                 Toast.makeText(mContext, "我是显示", Toast.LENGTH_SHORT).show();
@@ -143,6 +157,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+    /**
+     * 根据包名,类名,intent 打开应用
+     *
+     * @param context 上下文
+     * @param pkg     应用包名
+     * @param cls     Activity类名
+     * @param intent  intent
+     */
+    public static void startApp(Context context, String pkg, String cls, Intent intent) {
+        boolean appInstalled = checkAppInstalled(context, pkg);
+        //判断App是否存在，否则弹出提示
+        if (appInstalled) {
+            if (intent == null) {
+                //Intent intent = new Intent();
+                intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                //intent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+            }
+            ComponentName cn = new ComponentName(pkg, cls);
+            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setComponent(cn);
+            context.startActivity(intent);
+        } else {
+            Toast.makeText(context, "应用不存在", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * 根据包名,判断apk是否安装
+     *
+     * @param context 上下文
+     * @param pkgName 应用包名
+     */
+    private static boolean checkAppInstalled(Context context, String pkgName) {
+        if (pkgName == null || pkgName.isEmpty()) {
+            return false;
+        }
+        final PackageManager packageManager = context.getPackageManager();
+        List<PackageInfo> info = packageManager.getInstalledPackages(0);
+        if (info == null || info.isEmpty())
+            return false;
+        for (int i = 0; i < info.size(); i++) {
+            if (pkgName.equals(info.get(i).packageName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * 全局的 沉浸式状态栏/导航栏
