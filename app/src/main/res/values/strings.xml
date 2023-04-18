@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">系统设置</string>
+    <string name="title_bar" translatable="false">系统设置</string>
 </resources>
