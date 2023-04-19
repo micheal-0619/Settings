@@ -56,7 +56,9 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent);
                 break;
             case R.id.view_brightness:
-                Toast.makeText(mContext, "我是屏幕亮度", Toast.LENGTH_SHORT).show();
+                intent = new Intent(mContext, BrightnessActivity.class);
+                startActivity(intent);
+                //Toast.makeText(mContext, "我是屏幕亮度", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.view_eye:
                 Toast.makeText(mContext, "我是护眼模式", Toast.LENGTH_SHORT).show();
