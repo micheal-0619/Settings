@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.axb.settings.activity.AboutActivity;
 import com.axb.settings.adapter.SettingAdapter;
 import com.axb.settings.bean.SetItem;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -150,7 +151,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(mContext, "我是家长管控", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_ABOUT_TABLETS:
-                Toast.makeText(mContext, "我是关于平板", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, AboutActivity.class);
+                startActivity(intent);
+                //Toast.makeText(mContext, "我是关于平板", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_RESTORE_FACTORY:
                 Toast.makeText(mContext, "我是恢复出厂设置", Toast.LENGTH_SHORT).show();
