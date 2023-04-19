@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.axb.settings.R;
@@ -25,6 +26,7 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
+        ((TextView)findViewById(R.id.txt_tittle_name)).setText("显示设置");
         mContext = this;
         initDisplayView();
     }
@@ -61,7 +63,9 @@ public class DisplayActivity extends AppCompatActivity implements View.OnClickLi
                 //Toast.makeText(mContext, "我是屏幕亮度", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.view_eye:
-                Toast.makeText(mContext, "我是护眼模式", Toast.LENGTH_SHORT).show();
+                intent = new Intent(mContext, EyesProtectActivity.class);
+                startActivity(intent);
+                //Toast.makeText(mContext, "我是护眼模式", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
