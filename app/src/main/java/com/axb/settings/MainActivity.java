@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.axb.settings.activity.AboutActivity;
 import com.axb.settings.activity.AudioActivity;
+import com.axb.settings.activity.DisplayActivity;
 import com.axb.settings.activity.FontSizeActivity;
 import com.axb.settings.adapter.SettingAdapter;
 import com.axb.settings.bean.SetItem;
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Toast.makeText(mContext, "我是蓝牙", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_DISPLAY:
-                intent = new Intent(mContext, FontSizeActivity.class);
+                intent = new Intent(mContext, DisplayActivity.class);
                 startActivity(intent);
                 //Toast.makeText(mContext, "我是显示", Toast.LENGTH_SHORT).show();
                 break;
