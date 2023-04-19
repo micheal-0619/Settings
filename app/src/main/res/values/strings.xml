@@ -13,4 +13,14 @@
     <string name="parental_control" translatable="false">家长管控</string>
     <string name="about_tablets" translatable="false">关于平板电脑</string>
     <string name="restore_factory" translatable="false">恢复出厂设置</string>
+    <string name="font_size_preview_text_body">"尽管有绿色眼镜保护着眼睛，桃乐丝和她的朋友们在刚看到这座奇妙的城市时，还是被它耀眼的光芒照得眼花缭乱。街道两旁耸立着绿色大理石砌成的美丽房屋，到处镶嵌着闪闪发光的翡翠。他们走过的人行道同样是用绿色大理石铺砌而成，石块接合处嵌有一排排紧密相连的翡翠，在阳光的照耀下闪闪发亮。房屋的窗户镶嵌着绿色的玻璃，城市上空有淡淡的绿晕，就连阳光也散发着绿色光芒。
+
+街道上有很多行人，无论男女老少全都穿着绿色衣物，连皮肤都泛着绿色。他们都用惊异的眼光注视着桃乐丝和她这群外貌迥异的伙伴们，孩子们一看到狮子都拔腿跑了，躲到他们母亲身后；没有人想开口跟桃乐丝他们说话。街上有许多商店，桃乐丝看见店里的每一件商品都是绿色的，有绿色的糖果，绿色的爆米花，还有各种各样的绿鞋子、绿帽子和绿衣服。有位小贩在路上卖绿色的柠檬水，当孩子们去买汽水时，桃乐丝发现他们付钱时所用的硬币竟然也是绿色的。
+
+城里似乎没有马，也没有其他任何动物。有人用绿色小推车来回运载物品。每个人看起来都是那么快乐、满足，一切都显得安定繁荣。"</string>
+    <string name="font_size_preview_text_headline">示例文本</string>
+    <string name="font_size_preview_text_subtitle">第 11 章：奥兹国神奇的翡翠城</string>
+    <string name="font_size_preview_text_title">绿野仙踪</string>
+    <string name="font_size_summary">缩小或放大屏幕上的文字。</string>
+
 </resources>

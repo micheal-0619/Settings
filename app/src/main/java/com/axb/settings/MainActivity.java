@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.axb.settings.activity.AboutActivity;
+import com.axb.settings.activity.FontSizeActivity;
 import com.axb.settings.adapter.SettingAdapter;
 import com.axb.settings.bean.SetItem;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -55,11 +56,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     //settings
-    public static final String PKG_SETTINGS = "com.android.settings";
+    private static final String PKG_SETTINGS = "com.android.settings";
     //wifi
-    public static final String CLS_WIFI = "com.android.settings.wifi.WifiPickerActivity";
+    private static final String CLS_WIFI = "com.android.settings.wifi.WifiPickerActivity";
     //bluetooth
-    public static final String CLS_BLUETOOTH = "com.android.settings.Settings$ConnectedDeviceDashboardActivity";
+    private static final String CLS_BLUETOOTH = "com.android.settings.Settings$ConnectedDeviceDashboardActivity";
+
+    private static Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +133,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Toast.makeText(mContext, "我是蓝牙", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_DISPLAY:
-                Toast.makeText(mContext, "我是显示", Toast.LENGTH_SHORT).show();
+                intent = new Intent(mContext, FontSizeActivity.class);
+                startActivity(intent);
+                //Toast.makeText(mContext, "我是显示", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_SOUND:
                 Toast.makeText(mContext, "我是声音", Toast.LENGTH_SHORT).show();
@@ -151,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(mContext, "我是家长管控", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_ABOUT_TABLETS:
-                Intent intent = new Intent(mContext, AboutActivity.class);
+                intent = new Intent(mContext, AboutActivity.class);
                 startActivity(intent);
                 //Toast.makeText(mContext, "我是关于平板", Toast.LENGTH_SHORT).show();
                 break;
