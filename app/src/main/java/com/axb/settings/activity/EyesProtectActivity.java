@@ -45,7 +45,7 @@ public class EyesProtectActivity extends AppCompatActivity {
         super.onResume();
         boolean isNight = SharePrefUtils.getBoolean(KEY_DISPLAY_MODE, false);
         switch_btn_night_mode.setChecked(isNight);
-        sbr_set_mode_night.setProgress(SharePrefUtils.getInt(KEY_DISPLAY_PROGRESS, 100));
+        sbr_set_mode_night.setProgress(SharePrefUtils.getInt(KEY_DISPLAY_PROGRESS, 0));
         if (isNight) {
             view_sett.setVisibility(View.VISIBLE);
         } else {

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_bg"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_tittle_bg" />
+
+        <!--<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100.0dip"
+                android:layout_marginStart="20.0dip"
+                android:layout_marginTop="25.0dip"
+                android:layout_marginEnd="20.0dip"
+                android:background="@drawable/bg_settings"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hour_label"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20.0dip"
+                    android:layout_weight="1.0"
+                    android:text="24小时制"
+                    android:textColor="@color/black"
+                    android:textSize="30.0sp" />
+
+                <Switch
+                    android:id="@+id/switch_24_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:layout_marginEnd="20.0dip"
+                    android:thumb="@drawable/thumb"
+                    android:track="@drawable/track" />
+
+            </LinearLayout>
+
+        </LinearLayout>-->
+
+
+        <LinearLayout
+            android:id="@+id/view_date"
+            android:layout_width="wrap_content"
+            android:layout_height="100.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="15.0dip"
+            android:layout_marginEnd="20.0dip"
+            android:background="@drawable/bg_settings"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:text="日期"
+                android:textColor="@color/txt_color"
+                android:textSize="28.0sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="28.0sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_time"
+            android:layout_width="wrap_content"
+            android:layout_height="100.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="15.0dip"
+            android:layout_marginEnd="20.0dip"
+            android:background="@drawable/bg_settings"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:text="时间"
+                android:textColor="@color/txt_color"
+                android:textSize="28.0sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="28.0sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_time_zone"
+            android:layout_width="wrap_content"
+            android:layout_height="100.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="15.0dip"
+            android:layout_marginEnd="20.0dip"
+            android:background="@drawable/bg_settings"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:text="时区"
+                android:textColor="@color/txt_color"
+                android:textSize="28.0sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/time_zone"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="28.0sp" />
+
+            <!--<ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="25.0dip"
+                android:layout_marginEnd="40.0dip"
+                android:background="@drawable/btn_arrow" />-->
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

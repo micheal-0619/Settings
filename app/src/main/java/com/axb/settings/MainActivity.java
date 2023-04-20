@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.axb.settings.activity.AboutActivity;
 import com.axb.settings.activity.AudioActivity;
+import com.axb.settings.activity.DateTimeActivity;
 import com.axb.settings.activity.DisplayActivity;
 import com.axb.settings.activity.FontSizeActivity;
 import com.axb.settings.adapter.SettingAdapter;
@@ -145,7 +146,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Toast.makeText(mContext, "我是声音", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_DATE:
-                Toast.makeText(mContext, "我是日期", Toast.LENGTH_SHORT).show();
+                intent = new Intent(mContext, DateTimeActivity.class);
+                startActivity(intent);
+                //Toast.makeText(mContext, "我是日期", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_STORAGE:
                 Toast.makeText(mContext, "我是存储", Toast.LENGTH_SHORT).show();
