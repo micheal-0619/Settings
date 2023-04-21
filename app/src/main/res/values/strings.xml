@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">系统设置</string>
     <string name="title_bar" translatable="false">系统设置</string>
     <string name="wifi" translatable="false">Wi-Fi</string>
@@ -22,5 +22,6 @@
     <string name="font_size_preview_text_subtitle">第 11 章：奥兹国神奇的翡翠城</string>
     <string name="font_size_preview_text_title">绿野仙踪</string>
     <string name="font_size_summary">缩小或放大屏幕上的文字。</string>
-
+    <string name="storage_summary">"可用空间: <xliff:g id="FREE_SPACE">%1$s</xliff:g>, 总容量: <xliff:g id="TOTAL">%2$s</xliff:g>"</string>
+    <string name="memory_summary">"可用内存: <xliff:g id="FREE_SPACE">%1$s</xliff:g>, 总内存: <xliff:g id="TOTAL">%2$s</xliff:g>"</string>
 </resources>

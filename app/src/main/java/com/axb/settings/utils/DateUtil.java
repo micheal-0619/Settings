@@ -174,9 +174,9 @@ public class DateUtil {
         Boolean is24Hour = true;
         Log.d(TAG, "get24Hour: is24Hour == " + is24Hour);
 
-        if (isOpen) {
+        if(isOpen){
             Settings.System.putString(context.getContentResolver(), Settings.System.TIME_12_24, "24");//设置为24小时制
-        } else {
+        }else {
             Settings.System.putString(context.getContentResolver(), Settings.System.TIME_12_24, "12");//设置为12小时制
         }
 

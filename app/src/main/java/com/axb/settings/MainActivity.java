@@ -24,6 +24,7 @@ import com.axb.settings.activity.DateTimeActivity;
 import com.axb.settings.activity.DisplayActivity;
 import com.axb.settings.activity.FactoryActivity;
 import com.axb.settings.activity.FontSizeActivity;
+import com.axb.settings.activity.StorageMemoryActivity;
 import com.axb.settings.adapter.SettingAdapter;
 import com.axb.settings.bean.SetItem;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -152,7 +153,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Toast.makeText(mContext, "我是日期", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_STORAGE:
-                Toast.makeText(mContext, "我是存储", Toast.LENGTH_SHORT).show();
+                intent = new Intent(mContext, StorageMemoryActivity.class);
+                startActivity(intent);
+                //Toast.makeText(mContext, "我是存储", Toast.LENGTH_SHORT).show();
                 break;
             case SETTING_TAB_APP_NOTIFICATION:
                 Toast.makeText(mContext, "我是应用和通知", Toast.LENGTH_SHORT).show();
